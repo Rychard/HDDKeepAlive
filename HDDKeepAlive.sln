@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDDKeepAliveService", "HDDKeepAliveService\HDDKeepAliveService.csproj", "{0421499F-64FB-455F-8CA4-6A9F50BC65A4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HDDKeepAliveSetup", "HDDKeepAliveSetup\HDDKeepAliveSetup.vdproj", "{4A90B664-03E2-464E-B55B-882CFF1E6226}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://shearer:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HDDKeepAliveService\\HDDKeepAliveService.csproj
+		SccProjectName1 = HDDKeepAliveService
+		SccLocalPath1 = HDDKeepAliveService
+		SccProjectUniqueName2 = HDDKeepAliveSetup\\HDDKeepAliveSetup.vdproj
+		SccProjectName2 = HDDKeepAliveSetup
+		SccLocalPath2 = HDDKeepAliveSetup
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Debug|x86.ActiveCfg = Debug|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Debug|x86.Build.0 = Debug|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Release|Any CPU.ActiveCfg = Release|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Release|Mixed Platforms.Build.0 = Release|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Release|x86.ActiveCfg = Release|x86
+		{0421499F-64FB-455F-8CA4-6A9F50BC65A4}.Release|x86.Build.0 = Release|x86
+		{4A90B664-03E2-464E-B55B-882CFF1E6226}.Debug|Any CPU.ActiveCfg = Debug
+		{4A90B664-03E2-464E-B55B-882CFF1E6226}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{4A90B664-03E2-464E-B55B-882CFF1E6226}.Debug|x86.ActiveCfg = Debug
+		{4A90B664-03E2-464E-B55B-882CFF1E6226}.Release|Any CPU.ActiveCfg = Release
+		{4A90B664-03E2-464E-B55B-882CFF1E6226}.Release|Mixed Platforms.ActiveCfg = Release
+		{4A90B664-03E2-464E-B55B-882CFF1E6226}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
