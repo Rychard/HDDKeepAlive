@@ -7,6 +7,10 @@ namespace HDDKeepAliveService
 {
     public static class ConfigHelper
     {
+        /// <summary>
+        /// Validates the configuration for the application.  If the configuration is invalid (missing keys, etc) they will be added.
+        /// </summary>
+        /// <returns></returns>
         public static Boolean ValidateConfiguration()
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
@@ -51,6 +55,11 @@ namespace HDDKeepAliveService
             }
         }
 
+        /// <summary>
+        /// Gets the configuration value integer.
+        /// </summary>
+        /// <param name="KeyName">Name of the key in the configuration file.</param>
+        /// <returns>If valid, returns the integer representation of the value in the configuration file.  If invalid, returns <c>null</c>.</returns>
         public static int? GetConfigurationValueInteger(String KeyName)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
@@ -70,12 +79,17 @@ namespace HDDKeepAliveService
             return null; // Key does not exist.  Return null, signifying that the key wasn't present.
         }
 
+        /// <summary>
+        /// Gets the value from the configuration that matches the specified key as a <c>Boolean</c> value.
+        /// </summary>
+        /// <param name="KeyName">Name of the key in the configuration file.</param>
+        /// <returns>If valid, returns the boolean representation of the value in the configuration file.  If invalid, returns <c>null</c>.</returns>
         public static Boolean? GetConfigurationValueBoolean(String KeyName)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            String[] AvailableKeys = config.AppSettings.Settings.AllKeys;
-            Boolean Exists = AvailableKeys.Any(obj => obj == KeyName);
-            if (Exists) // Ensure the key exists before attempting to access it.
+            String[] availableKeys = config.AppSettings.Settings.AllKeys;
+            Boolean exists = availableKeys.Any(obj => obj == KeyName);
+            if (exists) // Ensure the key exists before attempting to access it.
             {
                 String value = config.AppSettings.Settings[KeyName].Value;
                 Boolean resultCode; // Will store the value specifying whether the parse was successful.
@@ -89,14 +103,21 @@ namespace HDDKeepAliveService
             return null; // Key does not exist.  Return null, signifying that the key wasn't present.
         }
 
+        /// <summary>
+        /// Determines whether this application is configured to perform the "Keep Alive" process on the specified type of drive.
+        /// </summary>
+        /// <param name="TypeOfDrive">The type of drive.</param>
+        /// <returns>
+        ///   <c>true</c> if the application is configured to keep the drive from spinning down; otherwise, <c>false</c>.
+        /// </returns>
         public static Boolean IsKeepaliveEnabled(DriveType TypeOfDrive)
         {
             String driveType = Enum.GetName(typeof(DriveType), TypeOfDrive);
-            String KeyName = "EnableDriveType" + driveType;
-            Boolean? SettingValue = GetConfigurationValueBoolean(KeyName);
-            if (SettingValue.HasValue)
+            String keyName = "EnableDriveType" + driveType;
+            Boolean? settingValue = GetConfigurationValueBoolean(keyName);
+            if (settingValue.HasValue)
             {
-                return SettingValue.Value;
+                return settingValue.Value;
             }
             return false;
         }

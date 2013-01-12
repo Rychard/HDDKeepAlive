@@ -38,23 +38,15 @@ namespace HDDKeepAliveService
 
         private void KeepAlive()
         {
-            //Console.WriteLine("HDDKeepAlive Service Started!");
-            //Console.Write("Validating HDDKeepAlive Configuration... ");
             ConfigHelper.ValidateConfiguration();
-            //Console.WriteLine("Done.");
-            //Console.Write("Loading HDDKeepAlive Configuration... ");
             TimeSpan WaitInterval = GetInterval();
-            //Console.WriteLine("Done.");
-            //Console.WriteLine("Initialization Complete!");
 
             while (true)
             {
                 // Primitive Timer
                 // This code puts the thread to sleep, 
-                //Console.WriteLine("HDDKeepAlive Napping for {0} seconds... ", WaitInterval.TotalSeconds.ToString());
                 if (stopEvent.WaitOne(WaitInterval)) { return; }
                 DateTime Start = DateTime.Now;
-                //Console.WriteLine("HDDKeepAlive Wake-up!");
                 KeepAliveDrive[] Drives = KeepAliveDrive.GetDrives();
 
                 var DrivesAvailable = new StringBuilder();
@@ -105,6 +97,9 @@ namespace HDDKeepAliveService
             }
         }
 
+        /// <summary>
+        /// Gets the configured interval between KeepAlive events from the configuration file.
+        /// </summary>
         private static TimeSpan GetInterval()
         {
             int? Interval = ConfigHelper.GetConfigurationValueInteger("KeepAliveInterval");
