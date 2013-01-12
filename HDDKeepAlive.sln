@@ -6,18 +6,6 @@ EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HDDKeepAliveSetup", "HDDKeepAliveSetup\HDDKeepAliveSetup.vdproj", "{4A90B664-03E2-464E-B55B-882CFF1E6226}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://shearer:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = HDDKeepAliveService\\HDDKeepAliveService.csproj
-		SccProjectName1 = HDDKeepAliveService
-		SccLocalPath1 = HDDKeepAliveService
-		SccProjectUniqueName2 = HDDKeepAliveSetup\\HDDKeepAliveSetup.vdproj
-		SccProjectName2 = HDDKeepAliveSetup
-		SccLocalPath2 = HDDKeepAliveSetup
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
